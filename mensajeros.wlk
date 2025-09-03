@@ -22,6 +22,11 @@ object neo {
     var property pesoTotal = 0
     var property puedeLlamar = tieneCredito
     var property tieneCredito = false
+
+    method puedeLlamar()
+    {
+        return tieneCredito
+    }
 }
 
 object saraConnor {
