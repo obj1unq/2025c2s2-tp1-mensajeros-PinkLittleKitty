@@ -10,7 +10,6 @@ describe "Casos de prueba" {
     test "El paquete de George que sí está pago puede ser llevado por Jean a la matrix" {
         paquete.estaPago(true)
         paquete.destino(matrix)
-        assert.that(paquete.estaPago())
         assert.that(paquete.puedeEntregar(jeanGray))
     }
 
@@ -18,16 +17,13 @@ describe "Casos de prueba" {
         paquete.estaPago(true)
         assert.that(paquete.estaPago())
         paquete.destino(brooklyn)
-        saraConnor.peso(70)
         saraConnor.vehiculo(camion)
         camion.cantidadAcoplados(1)
         assert.notThat(paquete.puedeEntregar(saraConnor))
     }
     test "La entrega anterior puede hacerse si Sara usa una moto" {
         paquete.estaPago(true)
-        assert.that(paquete.estaPago())
         paquete.destino(brooklyn)
-        saraConnor.peso(70)
         saraConnor.vehiculo(moto)
         assert.that(paquete.puedeEntregar(saraConnor))
     }

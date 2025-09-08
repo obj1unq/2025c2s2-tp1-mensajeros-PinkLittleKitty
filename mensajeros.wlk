@@ -14,30 +14,38 @@ object paquete {
 
 //// Mensajeros ////
 object jeanGray {
-    var property pesoTotal = 65
-    var property puedeLlamar = true
+    const pesoTotal = 65
+    const puedeLlamar = true
+
+    method pesoTotal() {
+        return pesoTotal
+    }
+ 
+    method puedeLlamar() {
+        return puedeLlamar
+    }
 }
 
 object neo {
-    var property pesoTotal = 0
-    var property puedeLlamar = tieneCredito
-    var property tieneCredito = false
+    const peso = 0
+    var property puedeLlamar = false
 
-    method puedeLlamar()
-    {
-        return tieneCredito
+    method peso() {
+        return peso
     }
 }
 
 object saraConnor {
-    var property peso = 70
-    var property pesoTotal = 0
-    var property puedeLlamar = false
+    const peso = 70
+    const puedeLlamar = false
     var property vehiculo = moto
 
-    method pesoTotal()
-    {
+    method peso() {
         return peso + vehiculo.peso()
+    }
+    
+    method PuedeLlamar() {
+        return puedeLlamar
     }
 
 }
@@ -59,15 +67,22 @@ object matrix {
 //// Vehiculos ////
 
 object moto {
-    var property peso = 100
+    const peso = 100
+
+    method peso() {
+        return peso
+    }
 }
 
 object camion {
-    var property peso = 500
+    const peso = 500
     var property cantidadAcoplados = 0
 
-    method peso()
-    {
-        return peso + cantidadAcoplados * 500
+    method peso() {
+        return peso + self.pesoTotalDeAcoplados()
+    }
+
+    method pesoTotalDeAcoplados() {
+        return cantidadAcoplados * 500
     }
 }
